@@ -1,216 +1,154 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anime UI</title>
-<style>
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  font-family: 'Poppins', sans-serif;
-  background: black;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Noob Roblox - Bio</title>
 
-#bgVideo {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  filter: brightness(60%);
-}
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 
-#audio { display: none; }
-
-.ui-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 380px;
-  padding: 25px;
-  border-radius: 30px;
-  backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.08);
-  border: 2px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 18px white, inset 0 0 18px white;
-  text-align: center;
-  transition: all 0.5s ease;
-  color: white;
-  z-index: 1;
-}
-
-.avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 100%;
-  margin: auto;
-  display: block;
-  border: 3px solid white;
-  object-fit: cover;
-}
-
-.bbh-sans-hegarty-regular {
-  font-family: "BBH Sans Hegarty", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.username {
-  font-size: 36px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid rgba(255,255,255,0.7);
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  animation: blinkCaret 0.7s step-end infinite;
-  background: linear-gradient(90deg, #ff6ec7, #00eaff, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 6px rgba(255,255,255,0.8),
-               0 0 12px rgba(255,110,199,0.5),
-               0 0 18px rgba(0,234,255,0.4);
-}
-
-@keyframes blinkCaret {
-  0%, 50%, 100% { border-color: rgba(255,255,255,0.7); }
-  25%, 75% { border-color: transparent; }
-}
-
-.btn {
-  width: 100%;
-  padding: 12px;
-  margin-top: 12px;
-  border-radius: 14px;
-  border: 2px solid white;
-  background: rgba(255,255,255,0.12);
-  color: white;
-  font-size: 17px;
-  cursor: pointer;
-  transition: 0.2s;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-}
-
-.btn:hover {
-  background: rgba(255,255,255,0.25);
-}
-
-.mode-switch {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 2px solid white;
-  background: rgba(255,255,255,0.15);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-}
-
-.mode-switch:hover { background: rgba(255,255,255,0.3); }
-.mode-switch span { font-size: 18px; color: white; }
-
-.ui-box::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 30px;
-  padding: 2px;
-  background: white;
-  opacity: 0.3;
-  filter: blur(8px);
-  z-index: -1;
-}
-
-.light {
-  background: rgba(255, 255, 255, 0.25);
-  color: black;
-  border: 2px solid rgba(255,255,255,0.5);
-  box-shadow: 0 0 12px rgba(255,255,255,0.6), inset 0 0 12px rgba(255,255,255,0.3);
-}
-
-.light .btn {
-  background: rgba(0,0,0,0.12);
-  color: black;
-  border: 2px solid rgba(0,0,0,0.3);
-}
-
-.light .btn:hover { background: rgba(0,0,0,0.25); }
-.light .mode-switch span { color: black; }
-
-/* ===================== Footer Note ===================== */
-.footer-note {
-  margin-top: 18px;
-  font-size: 12px;
-  color: rgba(255,255,255,0.6);
-  text-align: center;
-  line-height: 1.3;
-}
-</style>
+  <style>
+    :root {
+      --card: rgba(255, 255, 255, 0.05);
+      --text: #f2f2f2;
+      --accent: #60a5fa;
+    }
+    * { box-sizing: border-box; font-family: 'Orbitron', sans-serif; }
+    body {
+      margin: 0;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 30px;
+      overflow-x: hidden;
+    }
+    #bgVideo {
+      position: fixed; top:0; left:0;
+      width:100vw; height:100vh;
+      object-fit: cover; z-index: -3;
+    }
+    canvas {
+      position: fixed; top:0; left:0;
+      width: 100%; height: 100%; z-index: -2;
+    }
+    h1 {
+      font-size: 2em; margin-bottom:20px;
+      text-shadow: 0 0 12px var(--accent);
+      letter-spacing: 2px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 22px;
+      width: 90%;
+      max-width: 600px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    }
+    .btn-box { display: grid; gap:12px; margin-top:10px; }
+    .btn {
+      background: linear-gradient(90deg, #3b82f6, #60a5fa);
+      color:white; text-align:center; padding:12px;
+      border-radius:12px; font-size:1em; font-weight:700;
+      letter-spacing:1px; cursor:pointer; user-select:none;
+      box-shadow:0 0 10px rgba(96,165,250,0.5);
+      transition:0.20s;
+    }
+    .btn:hover { filter: brightness(1.18); transform: scale(1.05); }
+    .owner {
+      margin-top:22px;
+      color: var(--accent);
+      text-shadow: 0 0 6px var(--accent);
+      font-size: 0.95em;
+    }
+  </style>
 </head>
+
 <body>
 
-<video autoplay muted loop id="bgVideo">
-  <source src="https://cdn.discordapp.com/attachments/1440236304716533871/1440236431250423849/YTSave.com_YouTube_ai-hoshino-oshi-no-ko-Livewallpaper-4k_Media_ABv9R6KOqbQ_001_1080p.mp4?ex=691d6c33&is=691c1ab3&hm=0ab910f7c5d372cb952761e5f032639ede31c16f3d982a5dfed406a0eea4dff7&" type="video/mp4">
-</video>
+  <video id="bgVideo" autoplay muted loop playsinline>
+    <source src="https://cdn.discordapp.com/attachments/1441282537002635326/1441432330899292201/snaptik.vn_9v970.mp4?ex=6921c5f8&is=69207478&hm=2d37746d08e6c43d9275b0a9b289765d9c5987ee8227f60f22d1a54ecf0407fb&" type="video/mp4">
+  </video>
 
-<audio id="bgMusic" autoplay loop>
-  <source src="https://cdn.discordapp.com/attachments/1440236304716533871/1440236520173731872/snaptik.org_audio_10bc36924c379b9244d2ff7731d9c655.mp3?ex=691e1508&is=691cc388&hm=95d756b2de19871a2618c69ffbc2cb83442b5dc2125a94b3031c1c3edc806844&" type="audio/mp3">
-</audio>
+  <canvas id="stars"></canvas>
 
-<div class="ui-box" id="UI">
-  <img class="avatar" src="https://cdn.discordapp.com/attachments/1440236304716533871/1440305370894438502/7337076636201124871_avatar.png.jpg?ex=691dac68&is=691c5ae8&hm=372522a6dcbc42adc25203744438c8d4390933a7c1eb9b46cab0b108ed02f905&">
+  <h1>Noob Roblox Bio</h1>
 
-  <div class="username bbh-sans-hegarty-regular" id="username"></div>
+  <section class="card">
+    <div class="btn-box">
+      <div class="btn">Moreira Script</div>
+      <div class="btn">Script Tong Hop</div>
+      <div class="btn">Script Event SAB</div>
+      <div class="btn">Thai Script</div>
+      <div class="btn">Ynhi Script</div>
+    </div>
+  </section>
 
-  <button class="btn" onclick="openLink('https://anotepad.com/notes/3ajgk3pc')">Moreira Method Script</button>
-  <button class="btn" onclick="openLink('https://anotepad.com/notes/cc5sck8i')">Script Tổng Hợp</button>
-  <button class="btn" onclick="openLink('https://anotepad.com/notes/dwiw6w8r')">Thái Script</button>
-  <button class="btn" onclick="openLink('https://anotepad.com/notes/a4739hw9')">Event Script menu rời</button>
+  <div class="owner">Owner : @NoobRobloxOnTop</div>
 
-  <div class="mode-switch" onclick="toggleMode()">
-    <span>🌓</span>
-  </div>
+  <script>
+    // ⭐ STAR BACKGROUND
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    let w, h, stars = [];
 
-  <!-- Footer note -->
-  <div class="footer-note">
-    Mở server VIP cho người khác vào và nhập đúng link server VIP để tránh lỗi mờ màn hình hoặc lag
-  </div>
-</div>
+    function resize() { w=canvas.width=window.innerWidth; h=canvas.height=window.innerHeight; }
+    function initStars() {
+      stars=[]; for(let i=0;i<180;i++){ stars.push({x:Math.random()*w, y:Math.random()*h, size:Math.random()*1.8, speed:Math.random()*0.3+0.05}); }
+    }
+    function animate() {
+      ctx.clearRect(0,0,w,h);
+      ctx.fillStyle="white";
+      stars.forEach(s=>{
+        ctx.globalAlpha=0.5+Math.random()*0.5;
+        ctx.fillRect(s.x,s.y,s.size,s.size);
+        s.y+=s.speed; if(s.y>h) s.y=0;
+      });
+      requestAnimationFrame(animate);
+    }
+    window.addEventListener('resize',()=>{ resize(); initStars(); });
+    resize(); initStars(); animate();
 
-<script>
-function openLink(url) { window.open(url, "_blank"); }
-function toggleMode() { document.getElementById("UI").classList.toggle("light"); }
+    // ✅ SCRIPT MAPPING
+    const scripts = {
+      "Moreira Script": `loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobRoblox/Moreira/refs/heads/main/Method.lua"))()`,
+      "Script Tong Hop": `loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobRoblox/StealABrainrot/refs/heads/main/TongHopNoobRoblox"))()`,
+      "Script Event SAB": `loadstring(game:HttpGet("https://raw.githubusercontent.com/NoobRoblox/StealABrainrot/refs/heads/main/Event-lua"))()`,
+      "Thai Script": `loadstring(game:HttpGet("https://raw.githubusercontent.com/ThaiScrpitNo1/ScrpitStealABrainrot/refs/heads/main/XwareSpawner"))()`,
+      "Ynhi Script": `loadstring(game:HttpGet("https://raw.githubusercontent.com/MeowOnTopHub/MeowScript/refs/heads/main/NewUpdate"))()`
+    };
 
-/* Username typing effect */
-const usernameEl = document.getElementById('username');
-const usernameText = "Noob Roblox Script";
-let i = 0;
-function typeUsername() {
-  if(i < usernameText.length){
-    usernameEl.innerHTML += usernameText.charAt(i);
-    i++;
-    setTimeout(typeUsername, 120);
-  }
-}
-window.onload = typeUsername;
-</script>
+    // ✅ COPY + "Copied!" EFFECT
+    document.querySelectorAll('.btn').forEach(btn=>{
+      btn._originalText=btn.textContent;
+      btn._timer=null;
+      btn.addEventListener('click',()=>{
+        // Copy vào clipboard
+        const scriptText = scripts[btn._originalText];
+        if(scriptText) navigator.clipboard.writeText(scriptText);
+
+        // Clear timer nếu spam
+        if(btn._timer) clearTimeout(btn._timer);
+
+        // Hiện chữ Copied!
+        btn.textContent="Copied!";
+
+        // Hiệu ứng zoom + sáng nhẹ
+        btn.style.transform="scale(1.1)";
+        btn.style.boxShadow="0 0 20px rgba(96,165,250,0.9)";
+
+        // Trả về sau 2 giây
+        btn._timer=setTimeout(()=>{
+          btn.textContent=btn._originalText;
+          btn.style.transform="";
+          btn.style.boxShadow="0 0 10px rgba(96,165,250,0.5)";
+        },2000);
+      });
+    });
+  </script>
 
 </body>
 </html>
-
