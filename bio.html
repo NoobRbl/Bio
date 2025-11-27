@@ -130,8 +130,8 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;}
 </head>
 <body>
 
-<!-- Nhạc nền tự động phát -->
-<audio id="bg-music" src="https://noobrbl.github.io/Sound/snaptik.org_audio_791193c8ee37aca956adae02f6a7dc3e.mp3" autoplay loop></audio>
+<!-- Nhạc nền -->
+<audio id="bg-music" src="https://noobrbl.github.io/Sound/snaptik.org_audio_791193c8ee37aca956adae02f6a7dc3e.mp3" loop></audio>
 
 <!-- Nút nhạc -->
 <button id="music-btn">🎵</button>
@@ -263,9 +263,18 @@ window.addEventListener("resize",()=>{
   height=canvas.height=window.innerHeight;
 });
 
-// ==== Nút nhạc bật/tắt ====
+// ==== Nút nhạc + auto play sau click đầu tiên ====
 const musicBtn=document.getElementById("music-btn");
 const bgMusic=document.getElementById("bg-music");
+
+// Bắt nhạc sau click đầu tiên
+function startMusic(){
+  bgMusic.play().catch(()=>{}); 
+  window.removeEventListener("click", startMusic);
+}
+window.addEventListener("click", startMusic);
+
+// Bật/tắt nhạc
 musicBtn.addEventListener("click",()=>{
   if(bgMusic.paused){
     bgMusic.play();
