@@ -174,6 +174,7 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;}
       <button class="btn" id="btn2">MozilOnTop</button>
       <button class="btn" id="btn3">Thai Script</button>
       <button class="btn" id="btn4">Meow Script</button>
+      <button class="btn primary" id="btn5">CrashXMatriz</button>
     </div>
 
     <div class="footer-links" style="display:flex;gap:10px;margin-top:18px">
@@ -189,7 +190,13 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;}
 window.addEventListener("load", ()=>{document.body.classList.add("fade-in");});
 
 // Nút + fade-out
-const links={btn1:"https://pastefy.app/AeXwB0JS",btn2:"https://pastefy.app/BPHv8AbQ",btn3:"https://pastefy.app/o2zUBSe2",btn4:"https://pastefy.app/gpbqqigV"};
+const links={
+  btn1:"https://pastefy.app/AeXwB0JS",
+  btn2:"https://pastefy.app/BPHv8AbQ",
+  btn3:"https://pastefy.app/o2zUBSe2",
+  btn4:"https://pastefy.app/gpbqqigV",
+  btn5:"https://pastefy.app/RTpitfVC" // CrashXMatriz
+};
 Object.keys(links).forEach(id=>{
   const el=document.getElementById(id);
   el.addEventListener("click",()=>{
