@@ -171,10 +171,13 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;}
 
     <div class="buttons">
       <button class="btn primary" id="btn1">Noob Roblox</button>
-      <button class="btn" id="btn2">MozilOnTop</button>
-      <button class="btn" id="btn3">Thai Script</button>
-      <button class="btn" id="btn4">Meow Script</button>
+      <button class="btn primary" id="btn2">MozilOnTop</button>
+      <button class="btn primary" id="btn3">Thai Script</button>
+      <button class="btn primary" id="btn4">Meow Script</button>
       <button class="btn primary" id="btn5">CrashXMatriz</button>
+
+      <!-- ⭐ NÚT MỚI THÊM -->
+      <button class="btn primary" id="btn6">AdPanel Hub</button>
     </div>
 
     <div class="footer-links" style="display:flex;gap:10px;margin-top:18px">
@@ -195,8 +198,10 @@ const links={
   btn2:"https://pastefy.app/BPHv8AbQ",
   btn3:"https://pastefy.app/o2zUBSe2",
   btn4:"https://pastefy.app/gpbqqigV",
-  btn5:"https://pastefy.app/RTpitfVC" // CrashXMatriz
+  btn5:"https://pastefy.app/RTpitfVC", 
+  btn6:"https://pastefy.app/uYa2TehD" // ⭐ Nút AdPanel Hub
 };
+
 Object.keys(links).forEach(id=>{
   const el=document.getElementById(id);
   el.addEventListener("click",()=>{
